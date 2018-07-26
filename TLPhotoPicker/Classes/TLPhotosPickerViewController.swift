@@ -71,6 +71,8 @@ public struct TLPhotosPickerConfigure {
     public var numberOfColumn = 3
     public var singleSelectedMode = false
     public var maxSelectedAssets: Int? = nil
+    public var darkStyle = false
+    public var darkBackgroudColor: UIColor = UIColor.black
     public var fetchOption: PHFetchOptions? = nil
     public var selectedColor = UIColor(red: 88/255, green: 144/255, blue: 255/255, alpha: 1.0)
     public var cameraBgColor = UIColor(red: 221/255, green: 223/255, blue: 226/255, alpha: 1)
@@ -301,6 +303,14 @@ extension TLPhotosPickerViewController {
         if #available(iOS 9.0, *), self.allowedLivePhotos {
         }else {
             self.allowedLivePhotos = false
+        }
+        if self.configure.darkStyle {
+            self.collectionView.backgroundColor = UIColor.black
+            self.albumPopView.popupView.backgroundColor = self.configure.darkBackgroudColor
+            self.albumPopView.tableView.backgroundColor = UIColor.clear
+            self.albumPopView.tableView.separatorColor = UIColor(white: 0.15, alpha: 1.0)
+            self.popArrowImageView.tintColor = self.configure.darkBackgroudColor
+            self.popArrowImageView.image = TLBundle.podBundleImage(named: "pop_arrow")?.withRenderingMode(.alwaysTemplate)
         }
     }
     
@@ -984,6 +994,13 @@ extension TLPhotosPickerViewController: UITableViewDelegate,UITableViewDataSourc
         }
         cell.accessoryType = getfocusedIndex() == indexPath.row ? .checkmark : .none
         cell.selectionStyle = .none
+        if self.configure.darkStyle {
+            cell.backgroundColor = UIColor.clear
+            cell.titleLabel.textColor = UIColor(white: 0.85, alpha: 1.0)
+            cell.subTitleLabel.textColor = UIColor(white: 0.60, alpha: 1.0)
+            cell.thumbImageView.clipsToBounds = true
+            cell.thumbImageView.layer.cornerRadius = 2.0
+        }
         return cell
     }
 }
