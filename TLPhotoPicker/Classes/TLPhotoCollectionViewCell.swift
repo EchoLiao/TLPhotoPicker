@@ -88,6 +88,8 @@ open class TLPhotoCollectionViewCell: UICollectionViewCell {
         willSet(newValue) {
             self.selectedView?.isHidden = !newValue
             self.durationView?.backgroundColor = newValue ? self.configure.selectedColor : UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+            self.orderLabel?.isHidden = self.configure.singleSelectedMode
+            self.orderBgView?.isHidden = self.configure.singleSelectedMode
             if !newValue {
                 self.orderLabel?.text = ""
             }
