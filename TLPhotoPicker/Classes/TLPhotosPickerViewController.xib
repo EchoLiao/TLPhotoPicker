@@ -210,7 +210,7 @@
                 <constraint firstItem="Jcn-hC-Umh" firstAttribute="leading" secondItem="Zyk-dI-msE" secondAttribute="leading" id="aY7-Ml-cd3"/>
                 <constraint firstItem="HPm-Vc-F86" firstAttribute="trailing" secondItem="HLR-WT-D3I" secondAttribute="trailing" id="aoA-8G-xDA"/>
                 <constraint firstItem="4gR-Bn-quP" firstAttribute="leading" secondItem="Zyk-dI-msE" secondAttribute="leading" id="kb7-vy-yTu"/>
-                <constraint firstItem="4gR-Bn-quP" firstAttribute="bottom" secondItem="HLR-WT-D3I" secondAttribute="bottom" id="qqE-w2-Tsc"/>
+                <constraint firstItem="4gR-Bn-quP" firstAttribute="bottom" secondItem="Zyk-dI-msE" secondAttribute="bottom" id="qqE-w2-Tsc"/>
                 <constraint firstAttribute="trailing" secondItem="X8O-Gg-slz" secondAttribute="trailing" id="yWV-L2-0f4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="HLR-WT-D3I"/>
